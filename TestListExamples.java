@@ -2,6 +2,7 @@ import static org.junit.Assert.*;
 import org.junit.*;
 import java.util.Arrays;
 import java.util.List;
+import java.util.ArrayList;
 
 class IsMoon implements StringChecker {
   public boolean checkString(String s) {
