@@ -21,6 +21,7 @@ cp -r lib grading-area
 
 cd grading-area
 
+#checks for file ListExamples.java
 if ! [[ -f ListExamples.java ]]
 then 
     echo "Missing ListExamples.java in student submission"
@@ -30,6 +31,7 @@ fi
 
 javac -cp $CPATH *.java
 
+#Checks if compilation error produces an exit code that is not 0, implying that compilation failed
 if [[ $? -ne 0 ]]
 then 
     echo "Compilation error"
@@ -39,6 +41,7 @@ fi
 
 java -cp $CPATH org.junit.runner.JUnitCore TestListExamples > ta-output.txt
 
+#Runs the tests and finds how many tests and failures there are.
 if [[ $? -eq 0 ]]
 then 
     echo "Score: 100"
